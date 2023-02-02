@@ -1,18 +1,21 @@
-const Ship = function (shipType, length, numOfHits, sunk) {
-  this.shipType = shipType;
-  this.length = length;
-  this.numOfHits = numOfHits;
-  this.sunk = sunk;
+const Ship = function (length, numOfHits, sunk) {
+  return {
+    length,
+    numOfHits,
+    sunk,
 
-  this.hit = () => {
-    this.numOfHits++;
-    this.isSunk();
-  };
+    hit() {
+      if (!this.sunk) {
+        this.numOfHits++;
+      }
+      if (this.numOfHits === this.length) {
+        this.sunk = true;
+      }
+    },
 
-  this.isSunk = () => {
-    if (this.numOfHits === this.length) {
-      this.sunk = true;
-    }
+    isSunk() {
+      return this.sunk;
+    },
   };
 };
 
@@ -24,21 +27,3 @@ module.exports = Ship;
 3	Destroyer	3
 4	Submarine	3
 5	Patrol Boat 2 */
-
-//   const hit = () => {
-//     numOfHits = 0;
-//     numOfHits++;
-//     return numOfHits;
-//   };
-
-//   const isSunk = () => {
-//     if (type === "Carrier") {
-//     }
-//   };
-
-//   return {
-//     shipType: shipType,
-//     length: length,
-//     numOfHits: numOfHits,
-//     sunk: sunk,
-//   };
