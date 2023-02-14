@@ -6,6 +6,8 @@ function createAiGrid() {
 
   for (let i = 0; i < num ** 2; i++) {
     let div = document.createElement("div");
+    div.setAttribute("data-row", Math.floor(i / num));
+    div.setAttribute("data-column", i % num);
     div.classList = "square";
     container.appendChild(div);
   }
