@@ -30,7 +30,7 @@ const Player = function (name, playerType) {
 
       for (let i = 0; i < this.computerMoves.length; i++) {
         if (this.computerMoves[i].every((v, i) => v === move[i])) {
-          this.randomMove();
+          return this.randomMove();
         }
       }
       this.computerMoves.push(move);
