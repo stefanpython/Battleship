@@ -7,6 +7,8 @@ function createPlayerGrid() {
   for (let i = 0; i < num ** 2; i++) {
     let div = document.createElement("div");
     div.classList = "square";
+    div.setAttribute("data-row", Math.floor(i / num));
+    div.setAttribute("data-column", i % num);
     container.appendChild(div);
   }
 }
