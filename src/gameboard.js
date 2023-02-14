@@ -1,7 +1,7 @@
 const Ship = require("../src/ship");
 
-// y is vertical
-// x is orizontal
+// y is row
+// x is colmun
 
 const Gameboard = function (width, height) {
   // Create a width x height board and fill it with null (empty space)
@@ -24,8 +24,8 @@ const Gameboard = function (width, height) {
       return this.board[y][x];
     },
 
-    placeShip(length, numOfHits, sunk, x, y, isVertical) {
-      const newBoat = Ship(length, numOfHits, sunk);
+    placeShip(length, x, y, isVertical) {
+      const newBoat = Ship(length, 0, false);
 
       if (isVertical) {
         for (let i = y; i < y + newBoat.length && i < this.height; i++) {
@@ -44,10 +44,10 @@ const Gameboard = function (width, height) {
 
       if (ship) {
         ship.hit();
-        return { result: "Hit", missedShots: missedShots };
+        return { result: "Hit", missedShots: this.missedShots };
       } else {
         this.missedShots.push([x, y]);
-        return { result: "Miss", missedShots: missedShots };
+        return { result: "Miss", missedShots: this.missedShots };
       }
     },
 
