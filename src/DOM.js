@@ -15,18 +15,28 @@ function playerEventHandler() {
   const aiSquares = document.querySelectorAll(".aiContainer .square");
   aiSquares.forEach((square) => {
     square.addEventListener("click", function () {
-      if (square.classList.contains("ship")) return;
+      if (turn === true) {
+        if (square.classList.contains("ship")) return;
 
-      let y = this.getAttribute("data-row");
-      let x = this.getAttribute("data-column");
-      let attackResult = player.attack(aiBoard, x, y);
+        let y = this.getAttribute("data-row");
+        let x = this.getAttribute("data-column");
+        let attackResult = player.attack(aiBoard, x, y);
 
-      if (attackResult.result === "Hit") {
-        this.classList.add("ship");
-        this.style.backgroundColor = "red";
-      } else {
-        ships.push({ y, x });
-        this.style.backgroundColor = "grey";
+        if (attackResult.result === "Hit") {
+          this.classList.add("ship");
+          this.style.backgroundColor = "red";
+        } else {
+          ships.push({ y, x });
+          this.style.backgroundColor = "grey";
+          this.classList.add("clicked");
+        }
+
+        if (square.classList.contains("clicked")) {
+          square.style.pointerEvents = "none";
+        }
+
+        turn = !turn;
+        gameLoop();
       }
     });
   });
@@ -52,9 +62,7 @@ function aiEventHandler() {
 let turn = true;
 
 function gameLoop() {
-  if (turn === true) {
-    // Wait for player to make a move
-  } else if (turn === false) {
+  if (turn === false) {
     // Call AI's move
     aiEventHandler();
     // Change the turn back to player after AI's move
@@ -70,15 +78,6 @@ function gameLoop() {
   }
 }
 
-// Call the game loop function after player makes a move
-document.addEventListener("click", function () {
-  if (turn === true) {
-    playerEventHandler();
-    turn = !turn;
-    gameLoop();
-  }
-});
-
 module.exports = {
   playerEventHandler: playerEventHandler,
   aiEventHandler: aiEventHandler,
@@ -86,7 +85,7 @@ module.exports = {
 
 /*
   -disable square after clicking it once (add classList maybe)
-  - disable/end game loop after game is ended
+  - disable/end game loop after winner is alerted
   - try a game with 5 boats on each gameboard
   - search how to drag and drop boats
 */

@@ -9,4 +9,3 @@ const dom = require("../src/DOM");
 createPlayerGrid();
 createAiGrid();
 dom.playerEventHandler();
-// dom.aiEventHandler();
