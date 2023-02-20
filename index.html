@@ -11,6 +11,8 @@
     </head>
     <body>
        <h1 id="title">Battleship</h1>
+       
+      
 
        <div class="content">
         
@@ -23,13 +25,58 @@
         <div class="aiContainer">
             
         </div>
+
+        <!----------------------------------------------------->
+
+        <div class="boats">
+
+            <div class="carrier" draggable="true">
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+            </div>
+    
+            <div class="battleship" draggable="true">
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+            </div>
+    
+            <div class="destroyer" draggable="true">
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+            </div>
+    
+            <div class="submarine" draggable="true">
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+            </div>
+            
+            <div class="patrolboat" draggable="true">
+                <div data-row data-column class="boat"></div>
+                <div data-row data-column class="boat"></div>
+            </div>
+    
+           </div>
        </div>
         
+       
         
         <script src="main.js" async defer></script>
     </body>
 </html>
 
-
+<!--
+1	Carrier	    5
+2	Battleship	4
+3	Destroyer	3
+4	Submarine	3
+5	Patrol Boat 2 
+-->
 
 <!--Wallpaper https://www.wallpaperbetter.com/en/hd-wallpaper-celsl-->

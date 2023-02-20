@@ -55,25 +55,32 @@ html {
   .content {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 5em;
+    margin-top: 7em;
     margin-left: 80px;
     gap: 100px;
   }
 
   #titleAi {
-    margin-right: 320px;
-    margin-top: 385px;
+    margin-right: 10em;
+    margin-top: 285px;
     position: absolute;
   }
 
   #titlePlayer {
     margin-top: -55px;
-    margin-right: 280px;
+    margin-right: 190px;
     position: absolute;
   }
 
   .playerContainer,
   .aiContainer {
     margin-top: -20px;
+    min-width: 260px;
+    min-height: 260px;
+  }
+
+  .aiContainer {
+    margin-right: 40px;
+    margin-left: 40px;
   }
 }
