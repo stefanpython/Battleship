@@ -35,6 +35,7 @@ html {
   justify-content: center;
   margin-top: 12em;
   gap: 70px;
+  margin-left: 60px;
 }
 
 #titlePlayer,
@@ -83,4 +84,149 @@ html {
     margin-right: 40px;
     margin-left: 40px;
   }
+
+  .resetBtn {
+    margin-bottom: 200px;
+    margin-left: 100px;
+  }
+
+  footer {
+    margin-bottom: -180px;
+    width: 300px;
+    margin-left: 45px;
+  }
+}
+
+#overlay {
+  /* display: none; */
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.726);
+
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+#modal {
+  border-radius: 20px;
+  max-width: 100%;
+  height: 600px;
+  margin: auto;
+  background: #134e5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #71b280,
+    #134e5e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #71b280,
+    #134e5e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+#modal.fade,
+#overlay.fade {
+  opacity: 0;
+}
+
+#startgame {
+  display: block;
+  margin: 0 auto;
+  margin-top: 250px;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #d2e2ee;
+  font-size: 20px;
+  font-family: "Black Ops One", cursive;
+}
+
+#startgame:hover,
+#resetBtn:hover {
+  transform: scale(1.2);
+  transition: 0.7s;
+}
+
+#info {
+  justify-content: center;
+  text-align: center;
+  margin-bottom: -200px;
+  margin-top: 200px;
+  font-size: 25px;
+  font-weight: 600;
+  color: rgb(247, 167, 71);
+}
+
+.howto {
+  background-color: azure;
+  margin: 0 auto;
+  width: 200px;
+  background-color: brown;
+}
+
+.displayWinner {
+  justify-content: center;
+  background-color: #e6e6e6;
+  margin: 0 auto;
+  width: 480px;
+  margin-bottom: -50px;
+  border-radius: 10px;
+  text-align: center;
+
+  opacity: 1;
+  transition: opacity 1s ease-in;
+  color: red;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+#winner {
+  color: rgb(233, 4, 4);
+}
+
+#resetDiv {
+  display: flex;
+}
+
+#resetBtn {
+  display: none;
+  margin: 0 auto;
+  margin-bottom: -100px;
+  margin-top: 90px;
+  background-color: azure;
+  border-radius: 120px;
+  width: 70px;
+  z-index: 9000;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: white;
+  box-sizing: border-box;
+  background-color: rgba(51, 51, 51, 0.884);
+  width: 100%;
+  height: 46px;
+  padding-top: 15px;
+  padding-bottom: 17px;
+  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
