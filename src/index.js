@@ -4,8 +4,9 @@ const Player = require("../src/player");
 const createPlayerGrid = require("../src/playerGrid");
 const createAiGrid = require("../src/aiGrid");
 const dom = require("../src/DOM");
+const placeBoats = require("../src/drag");
 
-// Create two visual gameboards, for ai one and for player one
 createPlayerGrid();
 createAiGrid();
 dom.playerEventHandler();
+placeBoats();

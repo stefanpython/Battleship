@@ -68,6 +68,24 @@ const Gameboard = function (width, height) {
       }
       return allSunk;
     },
+
+    getShipLocations(ship) {
+      const locations = [];
+
+      for (let y = 0; y < this.height; y++) {
+        for (let x = 0; x < this.width; x++) {
+          if (this.board[y][x] === ship) {
+            locations.push([x, y]);
+          }
+        }
+      }
+
+      return locations;
+    },
+
+    getBoardSize() {
+      return { width, height };
+    },
   };
 };
 
