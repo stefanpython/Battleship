@@ -11,20 +11,31 @@
     </head>
     <body>
        <h1 id="title">Battleship</h1>
+ 
+        <div class="displayWinner"></div>
+
+        <div id="resetDiv">
+            <img id="resetBtn" src="reset1.png" alt="reset">
+        </div>
        
+      <div id="overlay">
+            <div id="modal">
+                <p id="info" class="howto">How to play: </p>
+                <p id="info">Boats are placed randomly.  </p>
+                <p id="info">Just start game and click on the AI gameboard.That`s it.</p>
+                <button id="startgame">StartGame</button>
+            </div>
+ 
+      </div>
       
 
        <div class="content">
         
-        <h2 id="titlePlayer">Player</h2>
-        <div class="playerContainer">
-            
-        </div>
+            <h2 id="titlePlayer">Player</h2>
+        <div class="playerContainer"></div>
 
-        <h2 id="titleAi">Ai</h2>
-        <div class="aiContainer">
-            
-        </div>
+          <h2 id="titleAi">Ai</h2>
+        <div class="aiContainer"></div>
 
         <!----------------------------------------------------->
 
@@ -65,18 +76,13 @@
            </div>
        </div>
         
-       
+       <footer>
+        Copyright © 2023 Stefanpython &nbsp;<a href="https://github.com/stefanpython"><img class="git" style="border-radius: 30px;" width="30px" src="https://c.tenor.com/A15H8E1VUh8AAAAM/github-cat.gif"></a>
+    </footer>
         
         <script src="main.js" async defer></script>
     </body>
 </html>
 
-<!--
-1	Carrier	    5
-2	Battleship	4
-3	Destroyer	3
-4	Submarine	3
-5	Patrol Boat 2 
--->
 
 <!--Wallpaper https://www.wallpaperbetter.com/en/hd-wallpaper-celsl-->

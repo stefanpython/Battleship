@@ -4,9 +4,7 @@ const Player = require("../src/player");
 const createPlayerGrid = require("../src/playerGrid");
 const createAiGrid = require("../src/aiGrid");
 const dom = require("../src/DOM");
-const placeBoats = require("../src/drag");
 
 createPlayerGrid();
 createAiGrid();
 dom.playerEventHandler();
-placeBoats();

@@ -88,7 +88,7 @@ function colorPlayerShips() {
       let square = document.querySelector(
         `[data-row="${location[0]}"][data-column="${location[1]}"]`
       );
-      square.style.backgroundColor = "blue";
+      square.style.backgroundColor = "rgb(37, 150, 190)";
     });
   });
 }
@@ -152,21 +152,32 @@ function gameLoop() {
   }
 
   if (aiBoard.allShipsSunk()) {
-    alert("You won the battle");
+    document.querySelector(".displayWinner").textContent = "You WON the game!";
+
     turn = null;
   } else if (playerBoard.allShipsSunk()) {
-    alert("AI sunk all your ships, du bist kapput!");
+    document.querySelector(".displayWinner").textContent =
+      "You LOST the game! Du bist kapput!";
+
     turn = null;
   }
 }
+
+// Add fade in out to modal and set display to none when game starts
+const startBtn = document.querySelector("#startgame");
+startBtn.addEventListener("click", () => {
+  document.querySelector("#modal").classList.toggle("fade");
+  document.querySelector("#overlay").classList.toggle("fade");
+  document.querySelector(".content").style.position = "relative";
+});
+
+const resetBtn = document.getElementById("resetBtn");
+resetBtn.addEventListener("click", () => {
+  location.reload();
+  document.querySelector("#overlay").style.display = "block";
+});
 
 module.exports = {
   playerEventHandler: playerEventHandler,
   aiEventHandler: aiEventHandler,
 };
-
-/*
-  - disable/end game loop after winner is alerted
-  - try a game with 5 boats on each gameboard
-  - search how to drag and drop boats
-*/
